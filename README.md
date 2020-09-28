@@ -1,2 +1,2 @@
 # stravaviewer
-Strava data viewer
+Zwift cycling data viewer
