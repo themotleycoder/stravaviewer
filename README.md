@@ -1,2 +1,2 @@
-# zwiftdataviewer
-Zwift cycling data viewer
+# ZwiftDataViewer
+Strava viewer written with Flutter
