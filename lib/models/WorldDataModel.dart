@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/utils/repository/worldcalendarrepository.dart';
-import 'package:stravaviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/utils/repository/worldcalendarrepository.dart';
+import 'package:zwiftdataviewer/utils/worlddata.dart';
 
 class WorldDataModel extends ChangeNotifier {
   final WorldCalendarRepository repository;

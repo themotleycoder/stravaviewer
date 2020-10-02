@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
 
 class Conversions {
   static double metersToDistance(BuildContext context, double meters) {

@@ -3,13 +3,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/stravalib/API/streams.dart';
-import 'package:stravaviewer/stravalib/Models/token.dart';
-import 'package:stravaviewer/stravalib/strava.dart';
-import 'package:stravaviewer/utils/repository/activitesrepository.dart';
-import 'package:stravaviewer/utils/repository/streamsrepository.dart';
-import 'package:stravaviewer/secrets.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/API/streams.dart';
+import 'package:zwiftdataviewer/stravalib/Models/token.dart';
+import 'package:zwiftdataviewer/stravalib/strava.dart';
+import 'package:zwiftdataviewer/utils/repository/activitesrepository.dart';
+import 'package:zwiftdataviewer/utils/repository/streamsrepository.dart';
+import 'package:zwiftdataviewer/secrets.dart';
 
 class WebRepository implements ActivitiesRepository, StreamsRepository {
   final Strava strava;

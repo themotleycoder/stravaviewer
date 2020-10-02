@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
 
 Widget singleDataLineItem(
     String title, IconData icon, String dataPoint, String units) {

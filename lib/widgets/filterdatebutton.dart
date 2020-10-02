@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/ActivitiesDataModel.dart';
-import 'package:stravaviewer/utils/constants.dart';
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/ActivitiesDataModel.dart';
+import 'package:zwiftdataviewer/utils/constants.dart';
 
 class FilterDateButton extends StatelessWidget {
   final bool isActive;

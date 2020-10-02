@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import 'package:stravaviewer/secrets.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/stravalib/strava.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
-import 'package:stravaviewer/stravalib/globals.dart' as Globals;
-import 'package:stravaviewer/screens/ridedetailscreen.dart';
+import 'package:zwiftdataviewer/secrets.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/strava.dart';
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/stravalib/globals.dart' as Globals;
+import 'package:zwiftdataviewer/screens/ridedetailscreen.dart';
 
 class ActivitiesListView extends StatelessWidget {
   final List<SummaryActivity> _activities;

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen();

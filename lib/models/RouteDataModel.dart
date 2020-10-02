@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/utils/repository/routerepository.dart';
-import 'package:stravaviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/utils/repository/routerepository.dart';
+import 'package:zwiftdataviewer/utils/worlddata.dart';
 
 class RouteDataModel extends ChangeNotifier {
   final RouteRepository repository;
@@ -56,6 +56,19 @@ class RouteDataModel extends ChangeNotifier {
     });
   }
 
+  Future updateRouteData() async {
+    _isLoading = true;
+    notifyListeners();
+
+    return repository.saveRouteData(_routeData).then((temp) {
+      _isLoading = false;
+      notifyListeners();
+    }).catchError((err) {
+      _isLoading = false;
+      notifyListeners();
+    });
+  }
+
   RouteDataModel({@required this.repository});
 
   List<RouteData> get filteredRoutes {
@@ -79,6 +92,7 @@ class RouteData {
   String altitude;
   String eventOnly;
   String routeName;
+  bool completed = false;
   int id;
   int imageId;
 
@@ -92,6 +106,7 @@ class RouteData {
     altitude = json['altitude'];
     eventOnly = json['eventOnly'];
     routeName = json['routeName'];
+    completed = json['completed'];
     id = json['id'];
     imageId = json['imageId'];
   }
@@ -104,6 +119,7 @@ class RouteData {
     data['altitude'] = this.altitude;
     data['eventOnly'] = this.eventOnly;
     data['routeName'] = this.routeName;
+    data['completed'] = this.completed;
     data['id'] = this.id;
     data['imageId'] = this.imageId;
     return data;

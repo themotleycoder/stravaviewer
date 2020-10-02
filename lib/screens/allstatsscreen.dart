@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/models/ActivitiesDataModel.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/utils/conversions.dart';
-import 'package:stravaviewer/widgets/listitemviews.dart' as listItemViews;
+import 'package:zwiftdataviewer/models/ActivitiesDataModel.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/utils/conversions.dart';
+import 'package:zwiftdataviewer/widgets/listitemviews.dart' as listItemViews;
 import 'package:charts_flutter/flutter.dart' as charts;
 
 class AllStatsScreen extends StatelessWidget {

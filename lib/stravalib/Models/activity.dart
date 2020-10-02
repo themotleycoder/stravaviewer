@@ -3,8 +3,8 @@
 import 'gear.dart';
 import 'fault.dart';
 import '../globals.dart' as globals;
-import 'package:stravaviewer/stravalib/Models/segmentEffort.dart';
-import 'package:stravaviewer/stravalib/Models/athlete.dart';
+import 'package:zwiftdataviewer/stravalib/Models/segmentEffort.dart';
+import 'package:zwiftdataviewer/stravalib/Models/athlete.dart';
 
 import 'package:intl/intl.dart';
 

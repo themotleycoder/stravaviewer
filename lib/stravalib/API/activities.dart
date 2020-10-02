@@ -1,6 +1,6 @@
 // activities.dart
 import 'package:http/http.dart' as http;
-import 'package:stravaviewer/stravalib/Models/fault.dart';
+import 'package:zwiftdataviewer/stravalib/Models/fault.dart';
 import 'dart:convert';
 import 'dart:async';
 

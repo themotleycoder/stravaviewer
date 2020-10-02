@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/stravalib/API/streams.dart';
-import 'package:stravaviewer/stravalib/strava.dart';
-import 'package:stravaviewer/stravalib/globals.dart' as globals;
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/repository/webrepository.dart';
+import 'package:zwiftdataviewer/stravalib/API/streams.dart';
+import 'package:zwiftdataviewer/stravalib/strava.dart';
+import 'package:zwiftdataviewer/stravalib/globals.dart' as globals;
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
 
 enum VisibilityFilter { all, active, completed }
 

@@ -1,10 +1,10 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-import 'package:stravaviewer/stravalib/globals.dart' as globals;
-import 'package:stravaviewer/stravalib/Models/fault.dart';
-import 'package:stravaviewer/stravalib/Models/segmentEffort.dart';
-import 'package:stravaviewer/stravalib/errorCodes.dart' as error;
+import 'package:zwiftdataviewer/stravalib/globals.dart' as globals;
+import 'package:zwiftdataviewer/stravalib/Models/fault.dart';
+import 'package:zwiftdataviewer/stravalib/Models/segmentEffort.dart';
+import 'package:zwiftdataviewer/stravalib/errorCodes.dart' as error;
 
 abstract class SegmentEfforts {
   Future<DetailedSegmentEffort> getSegmentEffortById(int segId) async {

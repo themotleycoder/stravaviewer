@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stravaviewer/mainapp.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/mainapp.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

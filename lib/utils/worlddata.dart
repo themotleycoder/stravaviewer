@@ -1,4 +1,4 @@
-import 'package:stravaviewer/models/WorldDataModel.dart';
+import 'package:zwiftdataviewer/models/WorldDataModel.dart';
 
 enum GuestWorldId {
   all,

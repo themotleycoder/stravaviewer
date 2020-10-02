@@ -2,15 +2,17 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/RouteDataModel.dart';
-import 'package:stravaviewer/models/WorldDataModel.dart';
-// import 'package:stravaviewer/utils/conversions.dart';
-import 'package:stravaviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/models/WorldDataModel.dart';
+// import 'package:zwiftdataviewer/utils/conversions.dart';
+import 'package:zwiftdataviewer/utils/worlddata.dart';
 //import 'package:flutter_svg/avd.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+
+double rowHeight = 40;
 
 class WorldDetailScreen extends StatelessWidget {
   final WorldData worldData;
@@ -59,11 +61,16 @@ class WorldDetailScreen extends StatelessWidget {
   }
 }
 
-class ExpandingCard extends StatelessWidget {
+class ExpandingCard extends StatefulWidget {
   final RouteData _routeData;
 
   ExpandingCard(this._routeData);
 
+  @override
+  _ExpandingCardState createState() => _ExpandingCardState();
+}
+
+class _ExpandingCardState extends State<ExpandingCard> {
   @override
   Widget build(BuildContext context) {
     return ExpandableNotifier(
@@ -89,17 +96,20 @@ class ExpandingCard extends StatelessWidget {
               child: ExpandablePanel(
                 theme: const ExpandableThemeData(
                   headerAlignment: ExpandablePanelHeaderAlignment.center,
-                  tapBodyToCollapse: true,
+                  tapBodyToCollapse: false,
                   tapHeaderToExpand: true,
                 ),
                 header: Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      _routeData.routeName,
-                      style: Constants.bodyTextStyle,
+                      widget._routeData.routeName,
+                      style: widget._routeData.completed != null &&
+                              widget._routeData.completed
+                          ? Constants.bodyTextStyleComplete
+                          : Constants.bodyTextStyle,
                     )),
                 collapsed: Text(
-                  _routeData.distance,
+                  widget._routeData.distance,
                   softWrap: true,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -107,11 +117,13 @@ class ExpandingCard extends StatelessWidget {
                 expanded: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    routeLineItem('Distance', _routeData.distance),
-                    routeLineItem('Altitiude', _routeData.altitude),
-                    routeLineItem('Additonal Info', _routeData.eventOnly),
+                    routeLineItem('Distance', widget._routeData.distance),
+                    routeLineItem('Altitiude', widget._routeData.altitude),
+                    routeLineItem(
+                        'Additonal Info', widget._routeData.eventOnly),
+                    eventLineItem('Route Completed', widget._routeData),
                     iconLineItem('Route Details', Icon(Icons.arrow_forward_ios),
-                        _routeData.url),
+                        widget._routeData.url),
                     // routeProfile(),
                   ],
                 ),
@@ -159,59 +171,95 @@ class ExpandingCard extends StatelessWidget {
 
     return _painters;
   }
-}
 
-Widget routeLineItem(String title, String value) {
-  return Container(
-      child: Padding(
-    padding: EdgeInsets.only(left: 0, right: 0, bottom: 16),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: Constants.headerTextStyle,
-          softWrap: true,
-          overflow: TextOverflow.fade,
-        ),
-        Text(
-          value,
-          style: Constants.bodyTextStyle,
-          softWrap: true,
-          overflow: TextOverflow.fade,
-        ),
-      ],
-    ),
-  ));
-}
+  Widget routeLineItem(String title, String value) {
+    return Container(
+        height: rowHeight,
+        child: Padding(
+          padding: EdgeInsets.only(left: 0, right: 0, bottom: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: Constants.headerTextStyle,
+                softWrap: true,
+                overflow: TextOverflow.fade,
+              ),
+              Text(
+                value,
+                style: Constants.bodyTextStyle,
+                softWrap: true,
+                overflow: TextOverflow.fade,
+              ),
+            ],
+          ),
+        ));
+  }
 
-Widget iconLineItem(String title, Icon value, String url) {
-  return Container(
-      child: Padding(
-    padding: EdgeInsets.only(left: 0, right: 0, bottom: 16),
-    child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: Constants.headerTextStyle,
-          softWrap: true,
-          overflow: TextOverflow.fade,
-        ),
-        IconButton(
-          icon: value,
-          color: Colors.blue,
-          onPressed: () => launchURL(url),
-        ),
-      ],
-    ),
-  ));
-}
+  Widget eventLineItem(String title, RouteData routeData) {
+    return Container(
+        height: rowHeight,
+        child: Padding(
+          padding: EdgeInsets.only(left: 0, right: 0, bottom: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: Constants.headerTextStyle,
+                softWrap: true,
+                overflow: TextOverflow.fade,
+              ),
+              // Container(
+              //     height: 50,
+              Switch(
+                value: routeData == null || routeData.completed == null
+                    ? false
+                    : routeData.completed,
+                onChanged: (value) {
+                  routeData.completed = value;
+                  setState(() {});
+                  Provider.of<RouteDataModel>(context, listen: false)
+                      .updateRouteData();
+                },
+                activeTrackColor: Colors.lightBlueAccent,
+                activeColor: Colors.blue,
+              ), //),
+            ],
+          ),
+        ));
+  }
 
-launchURL(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
+  Widget iconLineItem(String title, Icon value, String url) {
+    return Container(
+        height: rowHeight,
+        child: Padding(
+          padding: EdgeInsets.only(left: 0, right: 0, bottom: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: Constants.headerTextStyle,
+                softWrap: true,
+                overflow: TextOverflow.fade,
+              ),
+              IconButton(
+                icon: value,
+                color: Colors.blue,
+                onPressed: () => launchURL(url),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

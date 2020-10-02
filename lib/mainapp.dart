@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
-import 'package:stravaviewer/models/RouteDataModel.dart';
-import 'package:stravaviewer/routes.dart';
-import 'package:stravaviewer/screens/allstatsscreen.dart';
-import 'package:stravaviewer/screens/calendarscreen.dart';
-import 'package:stravaviewer/screens/homescreen.dart';
-import 'package:stravaviewer/screens/settingscreen.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/theme.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/routes.dart';
+import 'package:zwiftdataviewer/screens/allstatsscreen.dart';
+import 'package:zwiftdataviewer/screens/calendarscreen.dart';
+import 'package:zwiftdataviewer/screens/homescreen.dart';
+import 'package:zwiftdataviewer/screens/settingscreen.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class ZwiftViewerApp extends StatelessWidget {
   final FileRepository configRepository;

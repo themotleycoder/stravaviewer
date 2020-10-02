@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/models/ActivityDetailDataModel.dart';
-import 'package:stravaviewer/stravalib/Models/segmentEffort.dart';
-import 'package:stravaviewer/utils/conversions.dart';
-import 'package:stravaviewer/stravalib/API/streams.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/models/ActivityDetailDataModel.dart';
+import 'package:zwiftdataviewer/stravalib/Models/segmentEffort.dart';
+import 'package:zwiftdataviewer/utils/conversions.dart';
+import 'package:zwiftdataviewer/stravalib/API/streams.dart';
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
 
 class RouteSectionDetailScreen extends StatefulWidget {
   RouteSectionDetailScreen();

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/stravalib/globals.dart' as globals;
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/repository/webrepository.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/globals.dart' as globals;
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
 
 class ActivityPhotosDataModel extends ChangeNotifier {
   final WebRepository webRepository;

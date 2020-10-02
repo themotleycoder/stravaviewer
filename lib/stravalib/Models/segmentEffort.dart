@@ -1,5 +1,5 @@
 import 'fault.dart';
-import 'package:stravaviewer/stravalib/Models/athlete.dart';
+import 'package:zwiftdataviewer/stravalib/Models/athlete.dart';
 
 class DetailedSegmentEffort {
   Fault fault;

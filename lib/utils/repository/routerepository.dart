@@ -1,4 +1,4 @@
-import 'package:stravaviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/models/RouteDataModel.dart';
 
 abstract class RouteRepository {
   Future<Map<int, List<RouteData>>> loadRouteData();

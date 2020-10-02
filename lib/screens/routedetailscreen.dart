@@ -2,12 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/ActivityDetailDataModel.dart';
-import 'package:stravaviewer/models/ActivityPhotosDataModel.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/utils/conversions.dart';
-import 'package:stravaviewer/widgets/ListItemViews.dart';
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/ActivityDetailDataModel.dart';
+import 'package:zwiftdataviewer/models/ActivityPhotosDataModel.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/utils/conversions.dart';
+import 'package:zwiftdataviewer/widgets/ListItemViews.dart';
 
 class RouteDetailScreen extends StatelessWidget {
   @override

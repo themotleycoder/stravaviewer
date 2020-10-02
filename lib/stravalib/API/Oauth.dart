@@ -12,14 +12,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 // To handle browser return after auth is done
 import 'package:uni_links/uni_links.dart';
 
-import 'package:stravaviewer/stravalib/errorCodes.dart' as error;
-import 'package:stravaviewer/stravalib/globals.dart' as globals;
+import 'package:zwiftdataviewer/stravalib/errorCodes.dart' as error;
+import 'package:zwiftdataviewer/stravalib/globals.dart' as globals;
 // import 'constants.dart';
-import 'package:stravaviewer/stravalib/API/constants.dart';
+import 'package:zwiftdataviewer/stravalib/API/constants.dart';
 // import '../Models/token.dart';
-import 'package:stravaviewer/stravalib/Models/token.dart';
+import 'package:zwiftdataviewer/stravalib/Models/token.dart';
 // import '../Models/fault.dart';
-import 'package:stravaviewer/stravalib/Models/fault.dart';
+import 'package:zwiftdataviewer/stravalib/Models/fault.dart';
 
 ///===========================================
 /// Class related to Authorization processs

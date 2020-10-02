@@ -4,19 +4,19 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
-import 'package:stravaviewer/models/RouteDataModel.dart';
-import 'package:stravaviewer/models/WorldDataModel.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/stravalib/API/streams.dart';
-import 'package:stravaviewer/utils/repository/activitesrepository.dart';
-import 'package:stravaviewer/utils/repository/configrepository.dart';
-import 'package:stravaviewer/utils/repository/routerepository.dart';
-import 'package:stravaviewer/utils/repository/streamsrepository.dart';
-import 'package:stravaviewer/utils/constants.dart' as constants;
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/models/WorldDataModel.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/API/streams.dart';
+import 'package:zwiftdataviewer/utils/repository/activitesrepository.dart';
+import 'package:zwiftdataviewer/utils/repository/configrepository.dart';
+import 'package:zwiftdataviewer/utils/repository/routerepository.dart';
+import 'package:zwiftdataviewer/utils/repository/streamsrepository.dart';
+import 'package:zwiftdataviewer/utils/constants.dart' as constants;
 import 'package:html/parser.dart' as Parser;
-import 'package:stravaviewer/utils/repository/worldcalendarrepository.dart';
-import 'package:stravaviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/utils/repository/worldcalendarrepository.dart';
+import 'package:zwiftdataviewer/utils/worlddata.dart';
 
 class FileRepository
     implements

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
-import 'package:stravaviewer/stravalib/Models/activity.dart';
-import 'package:stravaviewer/stravalib/globals.dart';
-import 'package:stravaviewer/stravalib/strava.dart';
-import 'package:stravaviewer/stravalib/globals.dart' as globals;
-import 'package:stravaviewer/utils/files.dart' as fileUtils;
-import 'package:stravaviewer/utils/constants.dart' as constants;
-import 'package:stravaviewer/utils/worlddata.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/repository/webrepository.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/globals.dart';
+import 'package:zwiftdataviewer/stravalib/strava.dart';
+import 'package:zwiftdataviewer/stravalib/globals.dart' as globals;
+import 'package:zwiftdataviewer/utils/files.dart' as fileUtils;
+import 'package:zwiftdataviewer/utils/constants.dart' as constants;
+import 'package:zwiftdataviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
 
 class ActivitiesDataModel extends ChangeNotifier {
   List<SummaryActivity> _activities = [];

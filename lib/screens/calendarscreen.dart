@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/RouteDataModel.dart';
-import 'package:stravaviewer/models/WorldDataModel.dart';
-import 'package:stravaviewer/screens/worlddetailscreen.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/worlddata.dart';
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/models/WorldDataModel.dart';
+import 'package:zwiftdataviewer/screens/worlddetailscreen.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/worlddata.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:stravaviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen();

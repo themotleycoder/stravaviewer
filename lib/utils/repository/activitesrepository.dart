@@ -1,4 +1,4 @@
-import 'package:stravaviewer/stravalib/Models/activity.dart';
+import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
 
 abstract class ActivitiesRepository {
   Future<List<SummaryActivity>> loadActivities(int lastSyncDate);

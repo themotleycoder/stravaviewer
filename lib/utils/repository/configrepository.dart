@@ -1,4 +1,4 @@
-import 'package:stravaviewer/models/ConfigDataModel.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
 
 abstract class ConfigRepository {
   Future<ConfigData> loadConfig();

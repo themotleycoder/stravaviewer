@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:stravaviewer/utils/repository/configrepository.dart';
+import 'package:zwiftdataviewer/utils/repository/configrepository.dart';
 
 class ConfigDataModel extends ChangeNotifier {
   final ConfigRepository repository;

@@ -15,6 +15,11 @@ enum DateFilter {
 
 TextStyle headerTextStyle =
     new TextStyle(inherit: true, fontSize: 20.0, color: Colors.blueGrey[300]);
+TextStyle bodyTextStyleComplete = new TextStyle(
+    inherit: true,
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue[300]);
 TextStyle bodyTextStyle = new TextStyle(
     inherit: true,
     fontSize: 20.0,

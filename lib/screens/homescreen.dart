@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:stravaviewer/appkeys.dart';
-import 'package:stravaviewer/models/ActivitiesDataModel.dart';
-import 'package:stravaviewer/models/ConfigDataModel.dart';
-// import 'package:stravaviewer/models/RouteDataModel.dart';
-import 'package:stravaviewer/screens/allstatsscreen.dart';
-import 'package:stravaviewer/screens/calendarscreen.dart';
-import 'package:stravaviewer/screens/settingscreen.dart';
-import 'package:stravaviewer/secrets.dart';
-import 'package:stravaviewer/stravalib/strava.dart';
-import 'package:stravaviewer/utils/constants.dart';
-import 'package:stravaviewer/utils/repository/filerepository.dart';
-import 'package:stravaviewer/utils/repository/webrepository.dart';
-import 'package:stravaviewer/widgets/activitieslistview.dart';
-import 'package:stravaviewer/widgets/filterdatebutton.dart';
-import 'package:stravaviewer/stravalib/globals.dart' as Globals;
+import 'package:zwiftdataviewer/appkeys.dart';
+import 'package:zwiftdataviewer/models/ActivitiesDataModel.dart';
+import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
+// import 'package:zwiftdataviewer/models/RouteDataModel.dart';
+import 'package:zwiftdataviewer/screens/allstatsscreen.dart';
+import 'package:zwiftdataviewer/screens/calendarscreen.dart';
+import 'package:zwiftdataviewer/screens/settingscreen.dart';
+import 'package:zwiftdataviewer/secrets.dart';
+import 'package:zwiftdataviewer/stravalib/strava.dart';
+import 'package:zwiftdataviewer/utils/constants.dart';
+import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
+import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
+import 'package:zwiftdataviewer/widgets/activitieslistview.dart';
+import 'package:zwiftdataviewer/widgets/filterdatebutton.dart';
+import 'package:zwiftdataviewer/stravalib/globals.dart' as Globals;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen();
