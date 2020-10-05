@@ -16,6 +16,7 @@ import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
 import 'package:zwiftdataviewer/widgets/activitieslistview.dart';
 import 'package:zwiftdataviewer/widgets/filterdatebutton.dart';
 import 'package:zwiftdataviewer/stravalib/globals.dart' as Globals;
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen();
@@ -112,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap:
                     onTabTapped, //(int index) => _tab.value = HomeScreenTab.values[index],
                 type: BottomNavigationBarType.fixed,
-                fixedColor: Colors.orange,
+                fixedColor: zdvmOrange[100],
                 items: [
                   BottomNavigationBarItem(
                     icon: Icon(Icons.list, key: AppKeys.activitiesTab),

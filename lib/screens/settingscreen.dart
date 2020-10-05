@@ -5,6 +5,7 @@ import 'package:zwiftdataviewer/appkeys.dart';
 import 'package:zwiftdataviewer/models/ConfigDataModel.dart';
 import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
 import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen();
@@ -41,8 +42,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Provider.of<ConfigDataModel>(context, listen: false)
                     .configData = _configData;
               },
-              activeTrackColor: Colors.lightBlueAccent,
-              activeColor: Colors.blue,
+              activeTrackColor: zdvmLgtBlue,
+              activeColor: zdvmMidBlue[100],
             ),
           ),
           createCard(
@@ -51,7 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   key: AppKeys.refreshButton,
                   tooltip: 'refresh',
                   icon: Icon(Icons.refresh),
-                  color: Colors.blue,
+                  color: zdvmMidBlue[100],
                   onPressed: () => refreshRouteData())),
           createCard(
               'Refresh Calendar Data',
@@ -59,7 +60,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   key: AppKeys.refreshButton,
                   tooltip: 'refresh',
                   icon: Icon(Icons.refresh),
-                  color: Colors.blue,
+                  color: zdvmMidBlue[100],
                   onPressed: () => refreshCalendarData())),
         ]));
   }

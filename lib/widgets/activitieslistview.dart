@@ -7,6 +7,7 @@ import 'package:zwiftdataviewer/stravalib/strava.dart';
 import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
 import 'package:zwiftdataviewer/stravalib/globals.dart' as Globals;
 import 'package:zwiftdataviewer/screens/ridedetailscreen.dart';
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class ActivitiesListView extends StatelessWidget {
   final List<SummaryActivity> _activities;
@@ -39,7 +40,7 @@ class ActivitiesListView extends StatelessWidget {
                   elevation: 0,
                   child: ListTile(
                     leading: const Icon(Icons.directions_bike,
-                        size: 32.0, color: Colors.orange),
+                        size: 32.0, color: zdvOrange),
                     title: Text(_activities[index].name,
                         style: Constants.headerFontStyle),
                     subtitle: Text(DateFormat.yMd().add_jm().format(
@@ -48,7 +49,7 @@ class ActivitiesListView extends StatelessWidget {
                             : _activities[index].startDateLocal)),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      color: Colors.blue,
+                      color: zdvmMidBlue[100],
                     ),
                     onTap: () {
                       Navigator.push(
@@ -166,7 +167,7 @@ class ActivitySearch extends SearchDelegate<SummaryActivity> {
                   elevation: 0,
                   child: ListTile(
                     leading: const Icon(Icons.directions_bike,
-                        size: 32.0, color: Colors.orange),
+                        size: 32.0, color: zdvmOrange),
                     title: Text(results[index].name,
                         style: Constants.headerFontStyle),
                     subtitle: Text(DateFormat.yMd().add_jm().format(
@@ -175,7 +176,7 @@ class ActivitySearch extends SearchDelegate<SummaryActivity> {
                             : results[index].startDateLocal)),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      color: Colors.blue,
+                      color: zdvmMidBlue[100],
                     ),
                     onTap: () {
                       Navigator.push(

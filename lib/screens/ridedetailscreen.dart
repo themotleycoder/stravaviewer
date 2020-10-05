@@ -15,6 +15,7 @@ import 'package:zwiftdataviewer/utils/repository/webrepository.dart';
 import 'package:zwiftdataviewer/screens/routedetailscreen.dart';
 import 'package:zwiftdataviewer/screens/routeprofilechartscreen.dart';
 import 'package:zwiftdataviewer/screens/routesectiondetailscreen.dart';
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class DetailScreen extends StatefulWidget {
   final int id;
@@ -105,7 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ActivityDetailScreenTab.values.indexOf(tab),
                         onTap: onTabTapped,
                         type: BottomNavigationBarType.fixed,
-                        fixedColor: Colors.orange,
+                        fixedColor: zdvmOrange[100],
                         items: [
                           BottomNavigationBarItem(
                             icon: Icon(Icons.list, key: AppKeys.activitiesTab),

@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 const int defaultDataDate = 1388563200;
 
@@ -14,19 +15,19 @@ enum DateFilter {
 }
 
 TextStyle headerTextStyle =
-    new TextStyle(inherit: true, fontSize: 20.0, color: Colors.blueGrey[300]);
+    new TextStyle(inherit: true, fontSize: 20.0, color: zdvDrkBlue);
 TextStyle bodyTextStyleComplete = new TextStyle(
     inherit: true,
     fontSize: 20.0,
     fontWeight: FontWeight.bold,
-    color: Colors.blue[300]);
+    color: zdvMidBlue);
 TextStyle bodyTextStyle = new TextStyle(
     inherit: true,
     fontSize: 20.0,
     fontWeight: FontWeight.bold,
-    color: Colors.blueGrey);
+    color: zdvDrkBlue);
 TextStyle inlineBodyTextStyle =
-    new TextStyle(inherit: true, fontSize: 20.0, color: Colors.blueGrey[300]);
+    new TextStyle(inherit: true, fontSize: 20.0, color: zdvDrkBlue);
 TextStyle headerFontStyle = new TextStyle(
   inherit: true,
   fontSize: 20.0,
@@ -34,7 +35,7 @@ TextStyle headerFontStyle = new TextStyle(
 const double iconPadding = 8.0;
 const double rowHeight = 80;
 const double iconSize = 32.0;
-const Color iconColor = Colors.orangeAccent;
+const Color iconColor = zdvmOrange;
 const Color dividerColor = Colors.black12;
 const double boxSize = 10.0;
 Color calenderColor = Colors.grey[600];

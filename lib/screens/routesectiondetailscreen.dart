@@ -6,6 +6,7 @@ import 'package:zwiftdataviewer/stravalib/Models/segmentEffort.dart';
 import 'package:zwiftdataviewer/utils/conversions.dart';
 import 'package:zwiftdataviewer/stravalib/API/streams.dart';
 import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class RouteSectionDetailScreen extends StatefulWidget {
   RouteSectionDetailScreen();
@@ -30,13 +31,13 @@ class _RouteSectionDetailScreenState extends State<RouteSectionDetailScreen> {
     Color col = Colors.white;
     String text = '';
     if (prRank == 1) {
-      col = Colors.amber[400];
+      col = zdvYellow;
       text = 'PR';
     } else if (prRank == 2) {
       col = Colors.grey[400];
       text = '2';
     } else if (prRank == 3) {
-      col = Colors.orange[700];
+      col = zdvOrange;
       text = '3';
     }
 
@@ -122,7 +123,7 @@ class _RouteSectionDetailScreenState extends State<RouteSectionDetailScreen> {
                       subtitle: createSubTitle(_segmentEfforts[index], units),
                       // trailing: Icon(
                       //   Icons.arrow_forward_ios,
-                      //   color: Colors.blue,
+                      //   color: Constants.zdvMidBlue[100],
                       // ),
                       // onTap: () {
                       //   Navigator.push(

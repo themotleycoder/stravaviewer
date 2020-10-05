@@ -16,14 +16,99 @@ const MaterialColor white = const MaterialColor(
   },
 );
 
+const Color zdvOrange = Color(0xFFFB8500);
+const MaterialColor zdvmOrange = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFFFB8500),
+    100: const Color(0xFFFB8500),
+    200: const Color(0xFFFB8500),
+    300: const Color(0xFFFB8500),
+    400: const Color(0xFFFB8500),
+    500: const Color(0xFFFB8500),
+    600: const Color(0xFFFB8500),
+    700: const Color(0xFFFB8500),
+    800: const Color(0xFFFB8500),
+    900: const Color(0xFFFB8500),
+  },
+);
+
+const Color zdvYellow = Color(0xFFFFB703);
+const MaterialColor zdvmYellow = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFFFFB703),
+    100: const Color(0xFFFFB703),
+    200: const Color(0xFFFFB703),
+    300: const Color(0xFFFFB703),
+    400: const Color(0xFFFFB703),
+    500: const Color(0xFFFFB703),
+    600: const Color(0xFFFFB703),
+    700: const Color(0xFFFFB703),
+    800: const Color(0xFFFFB703),
+    900: const Color(0xFFFFB703),
+  },
+);
+
+const Color zdvDrkBlue = Color(0xFF023047);
+const MaterialColor zdvmDrkBlue = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFF023047),
+    100: const Color(0xFF023047),
+    200: const Color(0xFF023047),
+    300: const Color(0xFF023047),
+    400: const Color(0xFF023047),
+    500: const Color(0xFF023047),
+    600: const Color(0xFF023047),
+    700: const Color(0xFF023047),
+    800: const Color(0xFF023047),
+    900: const Color(0xFF023047),
+  },
+);
+
+const Color zdvMidBlue = Color(0xFF219EBC);
+const MaterialColor zdvmMidBlue = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFF219EBC),
+    100: const Color(0xFF219EBC),
+    200: const Color(0xFF219EBC),
+    300: const Color(0xFF219EBC),
+    400: const Color(0xFF219EBC),
+    500: const Color(0xFF219EBC),
+    600: const Color(0xFF219EBC),
+    700: const Color(0xFF219EBC),
+    800: const Color(0xFF219EBC),
+    900: const Color(0xFF219EBC),
+  },
+);
+
+const Color zdvLgtBlue = Color(0xFF8ECAE6);
+const MaterialColor zdvmLgtBlue = const MaterialColor(
+  0xFFFFFFFF,
+  const <int, Color>{
+    50: const Color(0xFF8ECAE6),
+    100: const Color(0xFF8ECAE6),
+    200: const Color(0xFF8ECAE6),
+    300: const Color(0xFF8ECAE6),
+    400: const Color(0xFF8ECAE6),
+    500: const Color(0xFF8ECAE6),
+    600: const Color(0xFF8ECAE6),
+    700: const Color(0xFF8ECAE6),
+    800: const Color(0xFF8ECAE6),
+    900: const Color(0xFF8ECAE6),
+  },
+);
+
 final ThemeData myTheme = ThemeData(
-  primarySwatch: Colors.orange,
+  primarySwatch: zdvmOrange,
   brightness: Brightness.light,
   primaryColor: Color(0xfff8f8f8),
   primaryColorBrightness: Brightness.dark,
-  primaryColorLight: Colors.orange,
-  primaryColorDark: Colors.orange[800],
-  accentColor: Colors.orange,
+  primaryColorLight: zdvmOrange,
+  primaryColorDark: zdvmOrange,
+  accentColor: zdvmOrange,
   accentColorBrightness: Brightness.dark,
   canvasColor: Color(0xfffafafa),
   scaffoldBackgroundColor: Color(0xfffafafa),
@@ -422,17 +507,17 @@ final ThemeData myTheme = ThemeData(
   //   ),
   // ),
   iconTheme: IconThemeData(
-    color: Color(0xdd000000),
+    color: Color(0xFF219EBC),
     opacity: 1,
     size: 24,
   ),
   primaryIconTheme: IconThemeData(
-    color: Color(0xff000000),
+    color: Color(0xFF219EBC),
     opacity: 1,
     size: 24,
   ),
   accentIconTheme: IconThemeData(
-    color: Color(0xffffffff),
+    color: Color(0xFF219EBC),
     opacity: 1,
     size: 24,
   ),

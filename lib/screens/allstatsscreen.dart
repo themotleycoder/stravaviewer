@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:zwiftdataviewer/models/ActivitiesDataModel.dart';
 import 'package:zwiftdataviewer/stravalib/Models/activity.dart';
 import 'package:zwiftdataviewer/utils/conversions.dart';
+import 'package:zwiftdataviewer/utils/theme.dart';
 import 'package:zwiftdataviewer/widgets/listitemviews.dart' as listItemViews;
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -132,12 +133,14 @@ class AllStatsScreen extends StatelessWidget {
         domainFn: (YearlyTotals totals, _) => totals.year,
         measureFn: (YearlyTotals totals, _) => totals.value,
         data: distanceData,
+        seriesColor: charts.ColorUtil.fromDartColor(zdvMidBlue),
       ),
       new charts.Series<YearlyTotals, String>(
         id: 'Elevation (' + units['height'] + ')',
         domainFn: (YearlyTotals totals, _) => totals.year,
         measureFn: (YearlyTotals totals, _) => totals.value,
         data: elevationData,
+        seriesColor: charts.ColorUtil.fromDartColor(zdvLgtBlue),
       )..setAttribute(charts.measureAxisIdKey, secondaryMeasureAxisId)
     ];
   }

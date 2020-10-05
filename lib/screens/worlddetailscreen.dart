@@ -11,6 +11,7 @@ import 'package:zwiftdataviewer/utils/worlddata.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 double rowHeight = 40;
 
@@ -45,7 +46,7 @@ class WorldDetailScreen extends StatelessWidget {
               ),
               body: ExpandableTheme(
                 data: const ExpandableThemeData(
-                  iconColor: Colors.blue,
+                  iconColor: zdvmMidBlue,
                   useInkWell: true,
                 ),
                 child: ListView.builder(
@@ -81,15 +82,6 @@ class _ExpandingCardState extends State<ExpandingCard> {
         elevation: 0,
         child: Column(
           children: <Widget>[
-            // SizedBox(
-            //   height: 150,
-            //   child: Container(
-            //     decoration: BoxDecoration(
-            //       color: Colors.orange,
-            //       shape: BoxShape.rectangle,
-            //     ),
-            //   ),
-            // ),
             ScrollOnExpand(
               scrollOnExpand: true,
               scrollOnCollapse: false,
@@ -223,8 +215,8 @@ class _ExpandingCardState extends State<ExpandingCard> {
                   Provider.of<RouteDataModel>(context, listen: false)
                       .updateRouteData();
                 },
-                activeTrackColor: Colors.lightBlueAccent,
-                activeColor: Colors.blue,
+                activeTrackColor: zdvmLgtBlue,
+                activeColor: zdvmMidBlue[100],
               ), //),
             ],
           ),
@@ -247,7 +239,7 @@ class _ExpandingCardState extends State<ExpandingCard> {
               ),
               IconButton(
                 icon: value,
-                color: Colors.blue,
+                color: zdvmMidBlue[100],
                 onPressed: () => launchURL(url),
               ),
             ],

@@ -9,6 +9,7 @@ import 'package:zwiftdataviewer/utils/repository/filerepository.dart';
 import 'package:zwiftdataviewer/utils/worlddata.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:zwiftdataviewer/utils/constants.dart' as Constants;
+import 'package:zwiftdataviewer/utils/theme.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen();
@@ -54,9 +55,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
               startingDayOfWeek: StartingDayOfWeek.monday,
               onDaySelected: _onDaySelected,
               calendarStyle: CalendarStyle(
-                selectedColor: Colors.orange,
-                todayColor: Colors.grey[400],
-                markersColor: Colors.blue,
+                selectedColor: zdvmOrange[100],
+                todayColor: zdvmLgtBlue[100],
+                markersColor: zdvmMidBlue[100],
                 outsideDaysVisible: false,
                 weekendStyle:
                     TextStyle().copyWith(color: Constants.calenderColor),
@@ -102,12 +103,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
             margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
             child: InkWell(
               child: ListTile(
-                  leading:
-                      const Icon(Icons.map, size: 32.0, color: Colors.orange),
+                  leading: const Icon(Icons.map, size: 32.0, color: zdvOrange),
                   title: Text(worldsData[world.id].name),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    color: Colors.blue,
+                    color: zdvmMidBlue[100],
                   ),
                   onTap: () {
                     Navigator.push(
@@ -131,11 +131,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
         margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 8.0),
         child: InkWell(
           child: ListTile(
-              leading: const Icon(Icons.map, size: 32.0, color: Colors.amber),
+              leading: const Icon(Icons.map, size: 32.0, color: zdvYellow),
               title: Text(worldsData[1].name),
               trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.blue,
+                color: zdvmMidBlue[100],
               ),
               onTap: () {
                 Navigator.push(
