@@ -46,7 +46,7 @@ class WorldDetailScreen extends StatelessWidget {
               ),
               body: ExpandableTheme(
                 data: const ExpandableThemeData(
-                  iconColor: zdvmMidBlue,
+                  iconColor: zdvMidBlue,
                   useInkWell: true,
                 ),
                 child: ListView.builder(
