@@ -106,6 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             ActivityDetailScreenTab.values.indexOf(tab),
                         onTap: onTabTapped,
                         type: BottomNavigationBarType.fixed,
+                        unselectedItemColor: zdvmMidBlue[100],
                         fixedColor: zdvmOrange[100],
                         items: [
                           BottomNavigationBarItem(

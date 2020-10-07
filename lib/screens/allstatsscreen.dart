@@ -30,7 +30,7 @@ class AllStatsScreen extends StatelessWidget {
                   children: [
                 Expanded(
                     child: Padding(
-                  padding: const EdgeInsets.all(16.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: charts.BarChart(
                     seriesList,
                     animate: true,
@@ -47,7 +47,7 @@ class AllStatsScreen extends StatelessWidget {
                   ),
                 )),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                  padding: const EdgeInsets.fromLTRB(4, 0, 4, 0),
                   child: Column(
                     children: <Widget>[
                       listItemViews.tripleDataLineItem(
@@ -133,14 +133,14 @@ class AllStatsScreen extends StatelessWidget {
         domainFn: (YearlyTotals totals, _) => totals.year,
         measureFn: (YearlyTotals totals, _) => totals.value,
         data: distanceData,
-        seriesColor: charts.ColorUtil.fromDartColor(zdvMidBlue),
+        seriesColor: charts.ColorUtil.fromDartColor(zdvOrange),
       ),
       new charts.Series<YearlyTotals, String>(
         id: 'Elevation (' + units['height'] + ')',
         domainFn: (YearlyTotals totals, _) => totals.year,
         measureFn: (YearlyTotals totals, _) => totals.value,
         data: elevationData,
-        seriesColor: charts.ColorUtil.fromDartColor(zdvLgtBlue),
+        seriesColor: charts.ColorUtil.fromDartColor(zdvYellow),
       )..setAttribute(charts.measureAxisIdKey, secondaryMeasureAxisId)
     ];
   }

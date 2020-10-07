@@ -113,6 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap:
                     onTabTapped, //(int index) => _tab.value = HomeScreenTab.values[index],
                 type: BottomNavigationBarType.fixed,
+                unselectedItemColor: zdvmMidBlue[100],
                 fixedColor: zdvmOrange[100],
                 items: [
                   BottomNavigationBarItem(
