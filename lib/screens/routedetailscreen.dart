@@ -25,64 +25,70 @@ class RouteDetailScreen extends StatelessWidget {
         );
       }
 
-      return Column(children: <Widget>[
+      return Stack(children: <Widget>[
         Container(
           child: new PrefetchImageDemo(detailedActivity: activity),
         ),
-        new Expanded(
+        Container(
+            // top: 100,
+            margin: EdgeInsets.fromLTRB(0, 240, 0, 0),
             child: ListView(
-          padding: const EdgeInsets.all(8.0),
-          children: <Widget>[
-            doubleDataHeaderLineItem(
-              [
-                'Distance (' + units['distance'] + ')',
-                'Elevation (' + units['height'] + ')'
+              // padding: const EdgeInsets.all(8.0),
+              children: <Widget>[
+                doubleDataHeaderLineItem(
+                  [
+                    'Distance (' + units['distance'] + ')',
+                    'Elevation (' + units['height'] + ')'
+                  ],
+                  [
+                    Conversions.metersToDistance(
+                            context, activity?.distance ?? 0)
+                        .toStringAsFixed(2),
+                    Conversions.metersToHeight(
+                            context, activity?.totalElevationGain ?? 0)
+                        .toStringAsFixed(0)
+                  ],
+                ),
+                doubleDataHeaderLineItem(
+                  ['Time', 'Calories'],
+                  [
+                    Conversions.secondsToTime(activity.elapsedTime),
+                    activity.calories.toStringAsFixed(0)
+                  ],
+                ),
+                doubleDataSingleHeaderLineItem(
+                    'HeartRate',
+                    null,
+                    ['Avg', 'Max'],
+                    [
+                      activity.averageHeartrate.toString(),
+                      activity.hasHeartrate
+                          ? activity.maxHeartrate.toString()
+                          : '0'
+                    ],
+                    'bpm'),
+                doubleDataSingleHeaderLineItem(
+                    'Watts',
+                    null,
+                    ['Avg', 'Max'],
+                    [
+                      activity.averageWatts.toStringAsFixed(0),
+                      activity.maxWatts.toStringAsFixed(0),
+                    ],
+                    'w'),
+                doubleDataSingleHeaderLineItem(
+                    'Speed',
+                    null,
+                    ['Avg', 'Max'],
+                    [
+                      Conversions.mpsToMph(activity.averageSpeed)
+                          .toStringAsFixed(2),
+                      Conversions.mpsToMph(activity.maxSpeed)
+                          .toStringAsFixed(2),
+                    ],
+                    'mph'),
               ],
-              [
-                Conversions.metersToDistance(context, activity?.distance ?? 0)
-                    .toStringAsFixed(2),
-                Conversions.metersToHeight(
-                        context, activity?.totalElevationGain ?? 0)
-                    .toStringAsFixed(0)
-              ],
-            ),
-            doubleDataHeaderLineItem(
-              ['Time', 'Calories'],
-              [
-                Conversions.secondsToTime(activity.elapsedTime),
-                activity.calories.toStringAsFixed(0)
-              ],
-            ),
-            doubleDataSingleHeaderLineItem(
-                'HeartRate',
-                null,
-                ['Avg', 'Max'],
-                [
-                  activity.averageHeartrate.toString(),
-                  activity.hasHeartrate ? activity.maxHeartrate.toString() : '0'
-                ],
-                'bpm'),
-            doubleDataSingleHeaderLineItem(
-                'Watts',
-                null,
-                ['Avg', 'Max'],
-                [
-                  activity.averageWatts.toStringAsFixed(0),
-                  activity.maxWatts.toStringAsFixed(0),
-                ],
-                'w'),
-            doubleDataSingleHeaderLineItem(
-                'Speed',
-                null,
-                ['Avg', 'Max'],
-                [
-                  Conversions.mpsToMph(activity.averageSpeed)
-                      .toStringAsFixed(2),
-                  Conversions.mpsToMph(activity.maxSpeed).toStringAsFixed(2),
-                ],
-                'mph'),
-          ],
-        )),
+            )),
       ]);
       // });
     });
@@ -117,8 +123,9 @@ class _PrefetchImageDemoState extends State<PrefetchImageDemo> {
         options: CarouselOptions(
             autoPlay:
                 imagesUrls != null && imagesUrls.length > 1 ? true : false,
-            aspectRatio: 2.0,
-            enlargeCenterPage: true,
+            // aspectRatio: 2.0,
+            viewportFraction: 1,
+            enlargeCenterPage: false,
             onPageChanged: (index, reason) {
               setState(() {
                 _current = index;

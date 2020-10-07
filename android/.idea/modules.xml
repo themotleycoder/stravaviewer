@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1714794036/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1714794036/path_provider.iml" group="android/path_provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-345704687/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/-345704687/shared_preferences.iml" group="android/shared_preferences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1418367150/sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/-1418367150/sqflite.iml" group="android/sqflite" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/22146015/uni_links.iml" filepath="$PROJECT_DIR$/.idea/modules/22146015/uni_links.iml" group="android/uni_links" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1492444763/url_launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/1492444763/url_launcher.iml" group="android/url_launcher" />
+    </modules>
+  </component>
+</project>
