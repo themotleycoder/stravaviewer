@@ -17,11 +17,13 @@ class WebRepository implements ActivitiesRepository, StreamsRepository {
   WebRepository({@required this.strava});
 
   @override
-  Future<List<SummaryActivity>> loadActivities(int lastSyncDate) async {
+  Future<List<SummaryActivity>> loadActivities(
+      int beforeDate, int afterDate) async {
     await getClient();
-
-    final int date = (new DateTime.now().millisecondsSinceEpoch / 1000).round();
-    return await strava.getLoggedInAthleteActivities(date, lastSyncDate, null)
+    beforeDate = (beforeDate / 1000).round();
+    afterDate = (afterDate / 1000).round();
+    return await strava.getLoggedInAthleteActivities(
+            beforeDate, afterDate, null)
         //   .then((activities) {
         // if (activities != null && activities.length > 0) {
         //   saveActivities(activities);

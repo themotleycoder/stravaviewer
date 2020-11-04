@@ -60,7 +60,7 @@ class ActivitiesDataModel extends ChangeNotifier {
     _isLoading = true;
     notifyListeners();
     return fileRepository
-        .loadActivities(constants.defaultDataDate)
+        .loadActivities(constants.defaultDataDate, constants.defaultDataDate)
         .then((loadedActivities) {
       _activities.addAll(loadedActivities);
       _isLoading = false;
@@ -80,28 +80,35 @@ class ActivitiesDataModel extends ChangeNotifier {
       } else {
         configData = configDataModel.configData;
       }
-      //configData.lastSyncDate = 1598584553;
-      // configData.lastSyncDate = ((new DateTime.now()
-      //             .subtract(new Duration(days: 2))
-      //             .millisecondsSinceEpoch) /
-      //         1000)
-      //     .round();
-      print('WOULD CALL WEB SVC NOW! - loadActivities');
+
+      final int beforeDate = (DateTime.now().millisecondsSinceEpoch);
+      final int afterDate = constants.defaultDataDate;
+      //configData.lastSyncDate;
+
       if (!isInDebug) {
         webRepository
-            .loadActivities(constants.defaultDataDate)
+            .loadActivities(beforeDate, afterDate)
             .then((webloadedActivities) {
           if (webloadedActivities != null && webloadedActivities.length > 0) {
             _activities = webloadedActivities;
-            // .addAll(webloadedActivities != null ? webloadedActivities : []);
+            final int startDate =
+                webloadedActivities[webloadedActivities.length - 1]
+                    .startDateLocal
+                    .millisecondsSinceEpoch;
+            final int elapsedTime =
+                webloadedActivities[webloadedActivities.length - 1]
+                        .elapsedTime *
+                    1000;
+            // _activities.addAll(webloadedActivities);
             fileRepository.saveActivities(_activities);
-            configData.lastSyncDate =
-                (DateTime.now().millisecondsSinceEpoch / 1000).round();
+            configData.lastSyncDate = startDate + elapsedTime;
             configDataModel.configData = configData;
             notifyListeners();
             _isLoading = false;
           }
         });
+      } else {
+        print('WOULD CALL WEB SVC NOW! - loadActivities');
       }
     }).catchError((err) {
       _isLoading = false;

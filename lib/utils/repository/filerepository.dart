@@ -51,7 +51,8 @@ class FileRepository
   }
 
   @override
-  Future<List<SummaryActivity>> loadActivities(int lastSyncDate) async {
+  Future<List<SummaryActivity>> loadActivities(
+      int beforeDate, int afterDate) async {
     List<SummaryActivity> activities = <SummaryActivity>[];
     final file = await _localActivityFile;
     try {
